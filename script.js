@@ -66,9 +66,12 @@ addHabitButton.addEventListener("click", () => {
     const habitName = document.createElement("p");
     habitName.textContent = newHabitTextInput.value;
 
-    const editLink = document.createElement("a");
+    const editLink = document.createElement("button");
+    editLink.setAttribute("command", "show-modal")
+    editLink.setAttribute("commandfor", "modify-modal")
     const icon = document.createElement("i");
     icon.classList.add("fi", "fi-rr-pencil");
+    icon.setAttribute("id", "modify-icon");
     editLink.append(icon);
 
     habit.append(checkbox, habitName, editLink);
