@@ -167,3 +167,25 @@ input[type="checkbox"] {
 #habits-list:empty {
     display: none;
 }
+#plus-add-habit {
+    display: none;
+}
+#plus-add-habit.is-active {
+    display: flex;
+}
+
+#minus-add-habit {
+    display: none;
+}
+#minus-add-habit.is-active {
+    display: flex;
+}
+
+.darkBackground {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background-color:rgba(0,0,0,0.2);
+}

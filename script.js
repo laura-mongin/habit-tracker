@@ -8,6 +8,8 @@ const habitCheckbox = document.querySelector("input[type='checkbox']");
 const habitBox = document.querySelector(".habit");
 const progressBar = document.querySelector(".progress");
 const progressText = document.querySelector("#completion p");
+const minusIcon = document.querySelector("#minus-add-habit");
+const plusIcon = document.querySelector("#plus-add-habit");
 
 // Functions
 function updateProgressBar() {
@@ -19,7 +21,16 @@ function updateProgressBar() {
 // New habit appears when clicking on the button
 newHabitButton.addEventListener("click", () => {
     newHabitDiv.classList.toggle("is-active");
+    
+   if (newHabitDiv.classList.contains("is-active")) {
+    minusIcon.classList.add("is-active");
+    plusIcon.classList.remove("is-active");
+    } else {
+    minusIcon.classList.remove("is-active");
+    plusIcon.classList.add("is-active");
+    }
 });
+
 
 newHabitTextInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
