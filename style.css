@@ -187,7 +187,7 @@ input[type="checkbox"] {
 }
 
 #modify-modal::backdrop {
-    background:rgba(71, 15, 0, 0.50);
+    background:rgba(43, 26, 22, 0.5);
 }
 
 #modify-modal {

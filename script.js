@@ -10,6 +10,11 @@ const progressBar = document.querySelector(".progress");
 const progressText = document.querySelector("#completion p");
 const minusIcon = document.querySelector("#minus-add-habit");
 const plusIcon = document.querySelector("#plus-add-habit");
+const modifyHabitNameBtn = document.querySelector("#modify-habit-name-btn");
+const modifyModalInput = document.querySelector("#modify-modal input");
+const wholeModal = document.querySelector("#modify-modal");
+const closeModalBtn = document.querySelector("#modify-modal button[command='close']");
+const deleteHabitBtn = document.querySelector("#delete-habit-btn");
 
 // Functions
 function updateProgressBar() {
@@ -17,6 +22,10 @@ function updateProgressBar() {
     progressBar.value = document.querySelectorAll(".habit.is-done").length;
     progressText.textContent = `${Math.floor(progressBar.value / progressBar.max * 100)}% completed ★`;
 }
+
+function checkValidHabitName(habitName) {}
+
+function checkHabitExists(habitName) {}
 
 // New habit appears when clicking on the button
 newHabitButton.addEventListener("click", () => {
@@ -69,6 +78,7 @@ addHabitButton.addEventListener("click", () => {
     const editLink = document.createElement("button");
     editLink.setAttribute("command", "show-modal")
     editLink.setAttribute("commandfor", "modify-modal")
+    editLink.setAttribute("id", "edit-habit-name-btn");
     const icon = document.createElement("i");
     icon.classList.add("fi", "fi-rr-pencil");
     icon.setAttribute("id", "modify-icon");
@@ -92,6 +102,47 @@ addHabitButton.addEventListener("click", () => {
 
 
     updateProgressBar();
+
+    editLink.addEventListener("click", () => {
+        let modifyModal = habitName;
+    });
+
+    // Modify habit name when clicking on the button
+    modifyHabitNameBtn.addEventListener("click", () => {
+    // Check if the habit name already exists & if the habit name is valid
+    const newHabitText = modifyModalInput.value.trim();
+    const newName = newHabitText.toLowerCase();
+
+    if (newHabitText === "") {
+        alert("The habit name is not valid. Please enter a habit name.");
+        return;
+    }
+
+    const existingNames = document.querySelectorAll(".habit p");
+    for (const name of existingNames) {
+        if (name.textContent.trim().toLowerCase() === newName) {
+            alert("The habit already exists. Please enter a new habit name.");
+            return;
+        }
+    }
+
+    habitName.textContent = modifyModalInput.value;
+    modifyModalInput.value = "";
+    wholeModal.close();
+
+    }); 
+    
+    // Close the modal when clicking on the close button
+    closeModalBtn.addEventListener("click", () => {
+        modifyModalInput.value = "";
+    });
+
+    // Delete a habit when clicking on the button
+    deleteHabitBtn.addEventListener("click", () => {
+        habit.remove();
+        updateProgressBar();
+        wholeModal.close();
+    });
     
 });
 
