@@ -17,7 +17,7 @@ Ce projet part d'une contrainte : **offrir la simplicité du papier, avec la dis
 - [x] Ajouter / modifier / supprimer une habitude
 - [x] Cocher une habitude
 - [x] Barre de progression (éléments cochés / restants)
-- [ ] Sauvegarde locale
+- [x] Sauvegarde locale
 - [ ] Bouton de reset manuel
 
 ## Roadmap
