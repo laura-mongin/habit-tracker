@@ -18,7 +18,11 @@ Ce projet part d'une contrainte : **offrir la simplicité du papier, avec la dis
 - Cocher une habitude
 - Barre de progression (éléments cochés / restants)
 - Sauvegarde locale
+
+## Reste à intégrer pour la V1
+
 - Bouton de reset manuel
+- Affichage responsive (mobile et tablette)
 
 ## Roadmap
 
